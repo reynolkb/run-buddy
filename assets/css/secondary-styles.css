@@ -1,3 +1,4 @@
+/* Hero */
 .hero {
     background-position: bottom;
     height: auto;
@@ -5,6 +6,7 @@
     margin-bottom: 40px;
 }
 
+/* Page heading */
 .page-title {
     color: #fce138;
     display: inline-block;
@@ -15,6 +17,7 @@
     font-style: italic;
 }
 
+/* Section CSS */
 .secondary-content {
     width: 80%;
     margin: auto;
