@@ -307,6 +307,24 @@ header nav ul li a:hover {
 }
 
 /* Meet Your Trainers section */
+.trainer-1 {
+	background-image: url("../images/trainer-1.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+.trainer-2 {
+	background-image: url("../images/trainer-2.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+.trainer-3 {
+	background-image: url("../images/trainer-3.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
 .trainers {
 	width: 100%;
 	margin: 0 auto;
@@ -316,34 +334,80 @@ header nav ul li a:hover {
 }
 
 .trainer {
-	background: var(--secondary-color);
 	color: var(--primary-color);
 	margin: 20px;
 	flex: 1;
+	overflow: hidden;
 }
 
-.trainer img {
+.trainer-img {
+	position: relative;
 	width: 100%;
+	min-height: 400px;
+	display: flex;
+	padding: 15px;
+	align-items: flex-end;
+}
+
+.trainer-img::after {
+	content: "";
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(rgba(252, 225, 56, 0.3), var(--secondary-color));
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+.trainer:hover .trainer-img::after {
+	opacity: 1;
+}
+
+.trainer-img h3 {
+	position: relative;
+	z-index: 10;
+	font-size: 28px;
+	margin-bottom: 5px;
+	top: 350px;
+	transition: 0.6s;
+}
+
+.trainer-img h4 {
+	position: relative;
+	z-index: 10;
+	font-size: 22px;
+	top: 300px;
+	transition: 0.6s;
+	transition-delay: 0.1s;
+}
+
+.trainer:hover .trainer-img h3, .trainer:hover .trainer-img h4 {
+	top: 0;
 }
 
 .trainer-bio {
 	padding: 25px;
 	line-height: 1.3;
+	background: var(--secondary-color);
 }
 
 .trainer-bio h3 {
 	font-size: 28px;
+	display: none;
 }
 
 .trainer-bio h4 {
 	font-weight: lighter;
 	font-size: 22px;
 	margin-bottom: 15px;
+	display: none;
 }
 
 .trainer-bio p {
 	font-size: 17px;
 }
+
 
 /* Service Plans Section */
 .services {
@@ -611,6 +675,18 @@ footer a {
 		writing-mode: unset;
 		grid-column: 1 / -1;
 		grid-row: -1;
+	}
+
+	.trainer-img h3, .trainer-img h4 {
+		display: none;
+	}
+
+	.trainer-img::after {
+		background: none;
+	}
+
+	.trainer-bio h3, .trainer-bio h4 {
+		display: block;
 	}
 }
 
